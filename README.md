@@ -5,6 +5,7 @@ A production-ready weather dashboard built with React 19, TypeScript, Vite, and 
 ## ✨ Features
 
 ### Core Weather
+
 - **Real-time data** via Open-Meteo (free, no key required)
 - **Current conditions** — temp, feels like, humidity, pressure, visibility, UV, AQI, dew point, wind gusts
 - **24-hour hourly forecast** with interactive temperature curve chart
@@ -12,6 +13,7 @@ A production-ready weather dashboard built with React 19, TypeScript, Vite, and 
 - **Dynamic sky backgrounds** — gradient adapts to weather condition and time of day
 
 ### UI & UX
+
 - **SkyPulse dashboard layout** — left panel (current), centre (weekly + hourly + globe), right drawer (charts/wind/8-day)
 - **Glassmorphism cards** with backdrop blur throughout
 - **Dark / light mode** — switchable instantly
@@ -20,6 +22,7 @@ A production-ready weather dashboard built with React 19, TypeScript, Vite, and 
 - **Smooth Framer Motion** transitions and panel animations
 
 ### Advanced Panels
+
 - **3D interactive globe** (react-globe.gl) — click to select any city
 - **Advanced metrics** — AQI rainbow donut gauge, rain probability bar chart, animated sun arc with progress
 - **Wind compass** — animated needle, direction, gusts, Beaufort scale
@@ -27,13 +30,15 @@ A production-ready weather dashboard built with React 19, TypeScript, Vite, and 
 - **8-day forecast drawer** with moon phases and UV index bars
 
 ### Smart Features
-- **AI Weather Insights** (Claude API) — clothing advice, outdoor activities, air quality tips, travel recommendations
+
+- **AI Weather Insights** (Google Gemini API) — clothing advice, outdoor activities, air quality tips, travel recommendations
 - **Weather alerts** — collapsible banner with dismiss, auto-expand first alert
 - **Favorites system** — heart any city, quick-access strip with localStorage persistence
 - **Recent searches** — last 8 cities remembered across sessions
 - **City search autocomplete** — flag emojis, state/country labels, debounced API calls
 
 ### PWA
+
 - **Installable** — Add to Home Screen on iOS/Android/desktop
 - **Service worker** with Workbox — offline-capable for previously viewed cities
 - **API response caching** — 5-min weather cache, 30-day icon cache
@@ -73,7 +78,7 @@ src/
 │       ├── BottomRow.tsx        Globe + metrics + AI
 │       ├── AdvancedMetrics.tsx  AQI donut, rain bars, sun arc
 │       ├── DetailDrawer.tsx     Temp chart, wind compass, 8-day
-│       ├── AIInsights.tsx       Claude-powered recommendations
+│       ├── AIInsights.tsx       Gemini-powered recommendations
 │       ├── AlertsBanner.tsx     Weather alerts
 │       └── FavoritesPanel.tsx   Saved cities strip
 ├── hooks/              useWeather.ts, useGeolocation
@@ -85,12 +90,12 @@ src/
 
 ## 🛰 Data Sources
 
-| Source | Data | Cost |
-|--------|------|------|
-| [Open-Meteo](https://open-meteo.com) | Weather, forecasts, UV | Free, no key |
-| [Open-Meteo Geocoding](https://open-meteo.com/en/docs/geocoding-api) | City search fallback | Free, no key |
-| [OpenWeatherMap](https://openweathermap.org/api) | Geocoding, AQI, icons | Free tier (1000 req/day) |
-| [Anthropic Claude](https://anthropic.com) | AI weather insights | Pay-per-use |
+| Source                                                               | Data                   | Cost                     |
+| -------------------------------------------------------------------- | ---------------------- | ------------------------ |
+| [Open-Meteo](https://open-meteo.com)                                 | Weather, forecasts, UV | Free, no key             |
+| [Open-Meteo Geocoding](https://open-meteo.com/en/docs/geocoding-api) | City search fallback   | Free, no key             |
+| [OpenWeatherMap](https://openweathermap.org/api)                     | Geocoding, AQI, icons  | Free tier (1000 req/day) |
+| [Google Gemini](https://ai.google.dev)                               | AI weather insights    | Free and paid tiers      |
 
 ## 🚢 Deploy
 
@@ -104,15 +109,15 @@ npm run build && netlify deploy --dir dist --prod
 
 ## 🛠 Tech Stack
 
-| Layer | Library |
-|-------|---------|
-| Framework | React 19 + TypeScript + Vite |
-| Styling | Tailwind CSS v4 |
-| Animation | Framer Motion |
-| State | Zustand (with localStorage persistence) |
-| Data fetching | TanStack Query v5 |
-| HTTP | Axios |
-| 3D Globe | react-globe.gl + Three.js |
-| Charts | Recharts |
-| Icons | Lucide React |
-| PWA | vite-plugin-pwa + Workbox |
+| Layer         | Library                                 |
+| ------------- | --------------------------------------- |
+| Framework     | React 19 + TypeScript + Vite            |
+| Styling       | Tailwind CSS v4                         |
+| Animation     | Framer Motion                           |
+| State         | Zustand (with localStorage persistence) |
+| Data fetching | TanStack Query v5                       |
+| HTTP          | Axios                                   |
+| 3D Globe      | react-globe.gl + Three.js               |
+| Charts        | Recharts                                |
+| Icons         | Lucide React                            |
+| PWA           | vite-plugin-pwa + Workbox               |
